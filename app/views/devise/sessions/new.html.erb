@@ -1,0 +1,45 @@
+<div class="container-tight py-6">
+  <div class="text-center mb-4">
+    <%= image_tag "logo.svg", height: 36 %>
+  </div>
+
+  <% if notice %>
+    <div class="alert alert-success alert-dismissible" role="alert">
+      <%= notice %>
+      <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+    </div>
+  <% end %>
+
+  <% if alert %>
+    <div class="alert alert-warning alert-dismissible" role="alert">
+      <%= alert %>
+      <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+    </div>
+  <% end %>
+
+  <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name), html: { class: "card card-md" }) do |f| %>
+    <div class="card-body">
+      <h2 class="mb-5 text-center">Login to your account</h2>
+
+      <div class="mb-3">
+        <%= f.input :email, placeholder: "Enter email" %>
+      </div>
+      <div class="mb-2">
+        <%= f.input :password, placeholder: "Password" %>
+      </div>
+
+      <div class="mb-2">
+        <%= f.input :remember_me, as: :boolean %>
+      </div>
+
+      <div class="form-footer">
+        <%= f.button :submit, "Sign in", class: "btn btn-primary btn-block" %>
+      </div>
+    </div>
+  <% end %>
+
+  <div class="text-center text-muted">
+    Don't have account yet?
+    <%= link_to "Sign up", new_user_registration_path, tabindex: "-1" %>
+  </div>
+</div>

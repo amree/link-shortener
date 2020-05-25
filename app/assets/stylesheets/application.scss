@@ -1,0 +1,7 @@
+@import 'tabler';
+
+// For error with with input prepend
+.form-group-invalid .input-group-text {
+  border-color: #cd201f;
+  color: #cd201f;
+}

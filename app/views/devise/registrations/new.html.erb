@@ -1,0 +1,32 @@
+<div class="container-tight py-6">
+  <div class="text-center mb-4">
+    <%= image_tag "logo.svg", height: 36 %>
+  </div>
+
+  <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { class: "card card-md" }) do |f| %>
+    <div class="card-body">
+      <h2 class="mb-5 text-center">Create new account</h2>
+
+      <div class="mb-3">
+        <%= f.input :email %>
+      </div>
+
+      <div class="mb-3">
+        <%= f.input :password %>
+      </div>
+
+      <div class="mb-3">
+        <%= f.input :password_confirmation %>
+      </div>
+
+      <div class="form-footer">
+        <%= f.button :submit, "Sign up", class: "btn btn-primary btn-block" %>
+      </div>
+    </div>
+  <% end %>
+
+  <div class="text-center text-muted">
+    Already have account?
+    <%= link_to "Sign in", new_user_session_path, tabindex: "-1" %>
+  </div>
+</div>

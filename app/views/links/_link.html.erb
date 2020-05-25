@@ -1,0 +1,30 @@
+<li class="list-group-item py-3">
+  <div class="d-md-flex justify-content-between" data-controller="clipboard">
+    <div>
+      <div class="card-title mb-0">
+        <%= link.current_title %>
+      </div>
+
+      <div>
+        <%= link_to link.url, link.url, target: "_blank" %>
+      </div>
+
+      <div class="mt-4 text-muted">
+        <%= link_to link.slug_with_url, link.slug_with_url, target: "_blank", data: { target: "clipboard.source" } %>
+      </div>
+    </div>
+
+    <div class="ml-auto mt-4 mt-md-0 d-flex align-items-center">
+      <%= link_to "Copy", "#", class: "btn btn-sm btn-outline-secondary btn-pill", data: { action: "clipboard#copy" }  %>
+      <%= link_to "Edit", edit_link_path(link), class: "btn btn-sm btn-outline-secondary btn-pill ml-2" %>
+      <% if show_link %>
+        <%= link_to "Show", link, class: "btn btn-sm btn-outline-secondary btn-pill ml-2" %>
+      <% end %>
+      <%= link_to 'Destroy', link, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-sm btn-outline-danger btn-pill ml-2" %>
+    </div>
+
+    <div class=" ml-md-3 p-3 mt-4 mt-md-0 d-flex align-items-center" >
+      <h1><%= link.ahoy_events_count || 0%> <small>visits</small></h1>
+    </div>
+  </div>
+</li>

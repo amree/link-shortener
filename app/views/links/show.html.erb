@@ -1,0 +1,61 @@
+<div class="content">
+  <div class="container-xl">
+    <div class="page-header">
+      <div class="row align-items-center">
+        <div class="col-auto">
+          <h2 class="page-title">
+            Show Link
+          </h2>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <ul class="list-group card-list-group">
+        <%= render "link", link: @link, show_link: false %>
+      </ul>
+    </div>
+
+    <% if @stats.size > 0 %>
+      <div class="card">
+        <div class="table-responsive">
+          <table class="table table-vcenter table-nowrap">
+            <thead>
+              <tr>
+                <th class="text-nowrap">IP</th>
+                <th class="text-nowrap">Referrer</th>
+                <th class="text-nowrap">Browser</th>
+                <th class="text-nowrap">OS</th>
+                <th class="text-nowrap">Device Type</th>
+                <th class="text-nowrap">Country</th>
+                <th class="text-nowrap">Time Open</th>
+              </tr>
+            </thead>
+            <tbody>
+              <% @stats.each do |stat| %>
+                <tr>
+                  <td><%= stat.visit.ip %></td>
+                  <td><%= stat.visit.referrer %></td>
+                  <td><%= stat.visit.browser %></td>
+                  <td><%= stat.visit.os %></td>
+                  <td><%= stat.visit.device_type %></td>
+                  <td><%= stat.visit.country %></td>
+                  <td><%= stat.time %></td>
+                </tr>
+              <% end %>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    <% else %>
+      <div class="card">
+        <div class="empty">
+          <p class="empty-title h3">No visits yet</p>
+          <p class="empty-subtitle text-muted">
+            Try visiting the given short link
+          </p>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>

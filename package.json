@@ -1,0 +1,26 @@
+{
+  "name": "link_shortener",
+  "private": true,
+  "dependencies": {
+    "@rails/actioncable": "^6.0.0",
+    "@rails/activestorage": "^6.0.0",
+    "@rails/ujs": "^6.0.0",
+    "@rails/webpacker": "4.2.2",
+    "bootstrap": "https://github.com/twbs/bootstrap.git#4fc701f",
+    "popper.js": "^1.16.1",
+    "stimulus": "^1.1.1",
+    "tabler": "^1.0.0-alpha.7",
+    "turbolinks": "^5.2.0"
+  },
+  "version": "0.1.0",
+  "devDependencies": {
+    "@babel/plugin-proposal-class-properties": "^7.8.3",
+    "babel-eslint": "^11.0.0-beta.2",
+    "eslint-plugin-babel": "^5.3.0",
+    "standard": "^14.3.4",
+    "webpack-dev-server": "^3.11.0"
+  },
+  "standard": {
+    "parser": "babel-eslint"
+  }
+}
